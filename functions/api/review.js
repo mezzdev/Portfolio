@@ -14,8 +14,10 @@ export async function onRequestPost({ request, env }) {
 
     const ip = getClientIp(request);
     if (!ip) return json({ ok: false, error: 'Impossible de vérifier ton adresse réseau.' }, 400);
-    const ipHash = await sha256(`${env.IP_HASH_SECRET}:${ip}`);
+    if (!env.IP_HASH_SECRET) return json({ ok: false, error: 'Configuration serveur incomplète.' }, 500);
 
+    // Only a salted server-side hash is stored; the raw IP never reaches D1.
+    const ipHash = await sha256(`${env.IP_HASH_SECRET}:${ip}`);
     const existing = await env.DB.prepare('SELECT id FROM reviews WHERE ip_hash = ? LIMIT 1').bind(ipHash).first();
     if (existing) return json({ ok: false, error: 'Une seule publication d’avis est autorisée par adresse réseau.' }, 409);
 
