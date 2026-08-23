@@ -1,4 +1,4 @@
-import { json } from './_utils.js';
+import { getClientIp, json } from './_utils.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return json(res, 405, { ok: false });
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
       title: 'Nouvelle visite',
       color: 0x000000,
       fields: [
-        { name: 'IP', value: safe(body.ip), inline: true },
+        { name: 'IP', value: safe(getClientIp(req)), inline: true },
         { name: 'Page', value: safe(body.page), inline: false },
         { name: 'Navigateur', value: safe(body.browser), inline: true },
         { name: 'OS', value: safe(body.os), inline: true },
