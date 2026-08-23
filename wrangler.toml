@@ -1,0 +1,13 @@
+name = "mezz-portfolio"
+compatibility_date = "2026-08-23"
+
+# After creating your D1 database, replace DATABASE_ID with its ID.
+[[d1_databases]]
+binding = "DB"
+database_name = "mezz-portfolio"
+database_id = "DATABASE_ID"
+
+[vars]
+# Set secrets in Cloudflare Dashboard instead of committing them here:
+# DISCORD_WEBHOOK_URL
+# IP_HASH_SECRET
