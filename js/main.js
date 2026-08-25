@@ -1,42 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const loader = document.getElementById("loader");
-    const progress = document.getElementById("loader-progress");
-    const percentText = document.getElementById("loader-percent");
-
-    if (!loader || !progress || !percentText) return;
-
-    let progressValue = 0;
-
-    function setProgress(value) {
-        progressValue = value;
-        progress.style.width = value + "%";
-        percentText.textContent = value + "%";
-    }
-
-    // Monte progressivement jusqu'à 90%
-    const loadingAnimation = setInterval(() => {
-        if (progressValue < 90) {
-            setProgress(progressValue + 1);
-        }
-    }, 25);
-
-    // Quand toute la page est réellement chargée
-    window.addEventListener("load", () => {
-        clearInterval(loadingAnimation);
-
-        setProgress(100);
-
-        setTimeout(() => {
-            loader.classList.add("hidden");
-        }, 400);
-    });
-});
-
 var selectedRating = 0;
-var debugMode = false; 
+var debugMode = false;
 
 document.addEventListener('DOMContentLoaded', function() {
-
     var currentYear = document.getElementById('currentYear');
     if (currentYear) currentYear.textContent = new Date().getFullYear();
 
@@ -140,7 +105,7 @@ async function logout() {
         await fetch('/api/logout', { method: 'POST' });
         checkAuth();
     } catch(e) {
-        console.log('logout error lol')
+        console.log('logout error lol');
     }
 }
 
@@ -235,31 +200,3 @@ function submitReview() {
     .catch(function() { msg.textContent = 'Erreur réseau'; msg.style.color = '#cc0000'; })
     .then(function() { btn.disabled = false; btn.textContent = "Publier l'avis"; });
 }
-const text = "Mezz";
-let index = 0;
-let deleting = false;
-
-function typeTitle() {
-    if (!deleting) {
-        document.title = text.slice(0, index);
-        index++;
-
-        if (index > text.length) {
-            deleting = true;
-            setTimeout(typeTitle, 1000);
-            return;
-        }
-    } else {
-        document.title = text.slice(0, index);
-        index--;
-
-        if (index < 0) {
-            deleting = false;
-            index = 0;
-        }
-    }
-
-    setTimeout(typeTitle, deleting ? 100 : 200);
-}
-
-typeTitle();
