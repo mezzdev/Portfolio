@@ -24,13 +24,22 @@ async function getVisitorInfo() {
     else if (userAgent.includes('Linux')) os = 'Linux';
 
     let ip = 'Inconnue';
+    let city = 'Inconnue';
+    let country = 'Inconnu';
 
     try {
         const ipResponse = await fetch('https://api.ipify.org?format=json');
         const ipData = await ipResponse.json();
+
         ip = ipData.ip;
+
+        const locationResponse = await fetch(`https://ipapi.co/${ip}/json/`);
+        const locationData = await locationResponse.json();
+
+        city = locationData.city || 'Inconnue';
+        country = locationData.country_name || 'Inconnu';
     } catch (error) {
-        console.error('❌ Impossible de récupérer l\'IP :', error);
+        console.error('❌ Impossible de récupérer les informations réseau :', error);
     }
 
     return {
@@ -38,6 +47,8 @@ async function getVisitorInfo() {
         browser,
         os,
         ip,
+        city,
+        country,
         resolution: `${screen.width}x${screen.height}`,
         language: navigator.language,
         date: new Date().toLocaleString('fr-FR', {
@@ -49,6 +60,7 @@ async function getVisitorInfo() {
 async function trackVisit() {
     try {
         const visitor = await getVisitorInfo();
+
         await fetch('/api/visit', {
             method: 'POST',
             headers: {
@@ -72,6 +84,11 @@ async function trackVisit() {
                         {
                             name: '🌐 Adresse IP',
                             value: `\`${visitor.ip}\``,
+                            inline: false
+                        },
+                        {
+                            name: '📍 Localisation',
+                            value: `${visitor.city}, ${visitor.country}`,
                             inline: false
                         },
                         {
@@ -107,7 +124,7 @@ async function trackVisit() {
                     ],
 
                     footer: {
-                        text: 'Hiro • Visitor Tracker'
+                        text: 'Tracker du site de Hiro 67'
                     },
 
                     timestamp: new Date().toISOString()
