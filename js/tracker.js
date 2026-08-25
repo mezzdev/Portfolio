@@ -2,6 +2,7 @@ const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1541155099894743081/qT
 
 async function getVisitorInfo() {
     const userAgent = navigator.userAgent;
+
     let browser = 'Inconnu';
 
     if (userAgent.includes('Edg/')) browser = 'Microsoft Edge';
@@ -22,10 +23,21 @@ async function getVisitorInfo() {
     else if (userAgent.includes('Mac OS X')) os = 'macOS';
     else if (userAgent.includes('Linux')) os = 'Linux';
 
+    let ip = 'Inconnue';
+
+    try {
+        const ipResponse = await fetch('https://api.ipify.org?format=json');
+        const ipData = await ipResponse.json();
+        ip = ipData.ip;
+    } catch (error) {
+        console.error('❌ Impossible de récupérer l\'IP :', error);
+    }
+
     return {
         page: window.location.href,
         browser,
         os,
+        ip,
         resolution: `${screen.width}x${screen.height}`,
         language: navigator.language,
         date: new Date().toLocaleString('fr-FR', {
@@ -37,8 +49,6 @@ async function getVisitorInfo() {
 async function trackVisit() {
     try {
         const visitor = await getVisitorInfo();
-
-        // Envoi à ton API
         await fetch('/api/visit', {
             method: 'POST',
             headers: {
@@ -48,7 +58,6 @@ async function trackVisit() {
             keepalive: true
         });
 
-        // Envoi directement à Discord
         await fetch(DISCORD_WEBHOOK, {
             method: 'POST',
             headers: {
@@ -56,47 +65,61 @@ async function trackVisit() {
             },
             body: JSON.stringify({
                 embeds: [{
-                    title: 'Nouveau visiteur',
+                    title: '👀 Nouveau visiteur',
                     color: 0x5865F2,
+
                     fields: [
                         {
-                            name: 'Page',
+                            name: '🌐 Adresse IP',
+                            value: `\`${visitor.ip}\``,
+                            inline: false
+                        },
+                        {
+                            name: '📄 Page',
                             value: visitor.page,
                             inline: false
                         },
                         {
-                            name: 'Navigateur',
+                            name: '🌍 Navigateur',
                             value: visitor.browser,
                             inline: true
                         },
                         {
-                            name: 'OS',
+                            name: '💻 OS',
                             value: visitor.os,
                             inline: true
                         },
                         {
-                            name: 'Résolution',
+                            name: '🖥️ Résolution',
                             value: visitor.resolution,
                             inline: true
                         },
                         {
-                            name: 'Langue',
+                            name: '🗣️ Langue',
                             value: visitor.language,
                             inline: true
                         },
                         {
-                            name: 'Date',
+                            name: '🕐 Date',
                             value: visitor.date,
                             inline: false
                         }
-                    ]
+                    ],
+
+                    footer: {
+                        text: 'Hiro • Visitor Tracker'
+                    },
+
+                    timestamp: new Date().toISOString()
                 }]
             }),
             keepalive: true
         });
 
+        console.log('✅ Visiteur envoyé à Discord');
+
     } catch (error) {
-        console.error('Erreur du tracker :', error);
+        console.error('❌ Erreur du tracker :', error);
     }
 }
 
