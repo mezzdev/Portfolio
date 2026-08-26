@@ -1,67 +1,529 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Mezz</title>
 
     <script>
-const title = "Mezz";
-let position = 0;
+        const title = "Mezz";
+        let position = 0;
 
-setInterval(() => {
-    document.title =
-        title.slice(position) + " • " + title.slice(0, position);
+        setInterval(() => {
+            document.title =
+                title.slice(position) + " • " + title.slice(0, position);
 
-    position = (position + 1) % title.length;
-}, 200);
-</script>
-    
+            position = (position + 1) % title.length;
+        }, 200);
+    </script>
+
     <link rel="stylesheet" href="css/style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="icon" href="favicon.ico">
 </head>
+
 <body>
+
     <nav class="navbar">
         <div class="nav-container">
+
             <a href="#top" class="logo">mezz</a>
+
             <div class="nav-links">
                 <a href="#services">Services</a>
                 <a href="#portfolio">Portfolio</a>
-                <a href="#tools">Outils</a>
+                <a href="#outils">Outils</a>
                 <a href="#development">Développement</a>
                 <a href="#collab">Collab</a>
                 <a href="#contact">Contact</a>
             </div>
-            <button class="menu-toggle" aria-label="Menu">☰</button>
+
+            <button class="menu-toggle" aria-label="Menu">
+                ☰
+            </button>
+
         </div>
     </nav>
+
     <section class="hero" id="top">
         <div class="hero-inner">
+
             <p class="hero-label">MONTEUR VIDEO</p>
+
             <h1 class="hero-title">mezz</h1>
-            <p class="hero-sub">Montage simple et efficace pour booster tes vues</p>
-            <p class="hero-desc">Je transforme des idées brutes en montages courts et nets, intenses et mémorables.</p>
-            <div class="hero-btns"><a href="#portfolio" class="btn btn-primary">Voir la sélection</a><a href="#contact" class="btn btn-outline">Me contacter</a></div>
+
+            <p class="hero-sub">
+                Montage simple et efficace pour booster tes vues
+            </p>
+
+            <p class="hero-desc">
+                Je transforme des idées brutes en montages courts et nets, intenses et mémorables.
+            </p>
+
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn btn-primary">
+                    Voir la sélection
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Me contacter
+                </a>
+            </div>
+
         </div>
-        <div class="hero-scroll">SCROLL</div>
+
+        <div class="hero-scroll">
+            SCROLL
+        </div>
     </section>
-    <section id="services" class="services"><div class="container"><div class="section-header reveal"><p class="section-label">Services</p><h2>Formats <span class="outline">maîtrisés</span></h2></div><div class="services-grid"><div class="service-card reveal" style="transition-delay:0.1s"><span class="service-number">01</span><h3>Montage court</h3><p>Coupe précise, tempo fort et structure pensée pour retenir l'attention dès les premières secondes.</p></div><div class="service-card reveal" style="transition-delay:0.2s"><span class="service-number">02</span><h3>Packaging video</h3><p>Habillage, transitions, sous-titres, sound design et finition visuelle cohérente.</p></div><div class="service-card reveal" style="transition-delay:0.3s"><span class="service-number">03</span><h3>Direction creative</h3><p>Une présentation premium pour donner à la chaîne, au reel ou au projet une vraie présence.</p></div></div></div></section>
-    <section class="tools"><div class="container"><div class="tools-content reveal"><p class="section-label">Outils</p><h2>Mes outils <span class="outline">de travail</span></h2><div class="tools-list"><span>Adobe Premiere Pro</span><span>Adobe After Effects</span><span>Adobe Audition</span></div><blockquote class="tools-quote">&ldquo;Never give in. Never give in. Never, never, never, never&mdash;in nothing, great or small&mdash;never give in, except to convictions of honour and good sense.&rdquo;</blockquote></div></div></section>
-    <section id="portfolio" class="portfolio"><div class="container"><div class="section-header reveal"><p class="section-label">Portfolio</p><h2>Montages <span class="outline">réalisés</span></h2></div><div class="portfolio-grid">
-        <div class="portfolio-item reveal-scale"><div class="portfolio-thumb"><img src="https://img.youtube.com/vi/-_bcmHst_Yc/hqdefault.jpg" alt="Video" loading="lazy"><a href="https://youtu.be/-_bcmHst_Yc" class="portfolio-overlay" target="_blank" rel="noopener"><span>Voir →</span></a></div></div>
-        <div class="portfolio-item reveal-scale"><div class="portfolio-thumb"><img src="https://img.youtube.com/vi/fMvX_PeXom4/hqdefault.jpg" alt="Video" loading="lazy"><a href="https://youtu.be/fMvX_PeXom4" class="portfolio-overlay" target="_blank" rel="noopener"><span>Voir →</span></a></div></div>
-        <div class="portfolio-item reveal-scale"><div class="portfolio-thumb"><img src="https://img.youtube.com/vi/qulAzY_eMTE/hqdefault.jpg" alt="Video" loading="lazy"><a href="https://youtu.be/qulAzY_eMTE" class="portfolio-overlay" target="_blank" rel="noopener"><span>Voir →</span></a></div></div>
-        <div class="portfolio-item reveal-scale"><div class="portfolio-thumb"><img src="https://img.youtube.com/vi/sFIP1reqB_4/hqdefault.jpg" alt="Video" loading="lazy"><a href="https://youtu.be/sFIP1reqB_4" class="portfolio-overlay" target="_blank" rel="noopener"><span>Voir →</span></a></div></div>
-        <div class="portfolio-item reveal-scale"><div class="portfolio-thumb"><img src="https://img.youtube.com/vi/AfmDTQgVIVk/hqdefault.jpg" alt="Video" loading="lazy"><a href="https://youtu.be/AfmDTQgVIVk" class="portfolio-overlay" target="_blank" rel="noopener"><span>Voir →</span></a></div></div>
-        <div class="portfolio-item reveal-scale"><div class="portfolio-thumb"><img src="https://img.youtube.com/vi/cbgoe5sceXk/hqdefault.jpg" alt="Video" loading="lazy"><a href="https://youtu.be/cbgoe5sceXk" class="portfolio-overlay" target="_blank" rel="noopener"><span>Voir →</span></a></div></div>
-    </div><div class="portfolio-more reveal"><a href="https://www.youtube.com/playlist?list=PLr6Ba9RZO-sZ-AjnjAxozsWwqyTn204Md" target="_blank" rel="noopener" class="btn btn-outline">Playlist complète →</a></div></div></section>
-    <section class="tools development-section"><div class="container"><div class="tools-content reveal"><p class="section-label">En développement</p><h2>Cette section est <span class="outline">en développement</span></h2><p class="hero-desc">Cette partie du site est actuellement en développement. Elle sera disponible prochainement.</p></div></div></section>
-    <section id="collab" class="contact"><div class="container"><div class="section-header reveal"><p class="section-label">Collaborations</p><h2>Ils m'ont <span class="outline">fait confiance</span></h2></div><div class="collab-grid"><a href="https://www.youtube.com/@cubi-game6913" target="_blank" rel="noopener" class="collab-card reveal-left"><div class="collab-avatar"><img src="https://yt3.googleusercontent.com/einN5wa9bMaQ_-cna0F8ZrExNG9nvBKZnCZCObLQHOOsYnmsMiZt9l8G0inbGP9t2uxmLR9JcA=s160-c-k-c0x00ffffff-no-rj" alt="Cubi Game" loading="lazy"></div><div class="collab-info"><h3>Cubi Game</h3><span>Influenceur</span></div></a><a href="https://www.youtube.com/@StickOnThePlace" target="_blank" rel="noopener" class="collab-card reveal-right"><div class="collab-avatar"><img src="https://yt3.googleusercontent.com/R5N_tGfLAab49iqHK6BfvVW_jr8749gIKCWH1dE57E0e2FIbyk6wTtMCtfRrAYEPzsTEFayQ=s160-c-k-c0x00ffffff-no-rj" alt="Stick On The Place" loading="lazy"></div><div class="collab-info"><h3>Stick On The Place</h3><span>Influenceur</span></div></a></div></div></section>
-    <section id="contact" class="contact"><div class="container"><div class="contact-content reveal"><p class="section-label">Contact</p><h2>Parlons <span class="outline">de ton projet</span></h2><div class="contact-links"><a href="https://discord.com/users/887946326776643615" target="_blank" rel="noopener" class="btn btn-primary">Discord — mezzdev</a><div class="contact-social"><a href="https://guns.lol/mezzdev" target="_blank" rel="noopener">Guns.lol</a><a href="https://www.youtube.com/@mezzmonteur" target="_blank" rel="noopener">YouTube</a><a href="https://www.youtube.com/playlist?list=PLr6Ba9RZO-sZ-AjnjAxozsWwqyTn204Md" target="_blank" rel="noopener">Playlist</a></div></div></div></div></section>
-    <footer class="footer"><div class="footer-container"><p class="footer-copy">© <span id="currentYear">2026</span> — mezz</p><div class="footer-links"><a href="https://mezzmonteur.com/confidentialite">Confidentialité</a></div><a href="#top" class="footer-top">Revenir en haut ↑</a></div></footer>
-    <aside id="consent-banner" class="consent-banner" aria-label="Préférences de confidentialité" hidden><p>Ce site utilise une mesure d’audience anonyme après votre accord.</p><div class="consent-actions"><button id="consent-decline" type="button" class="consent-button consent-button-secondary">Refuser</button><button id="consent-accept" type="button" class="consent-button">Accepter</button></div></aside>
-    <script type="module" src="js/tracker.js"></script><script src="js/main.js"></script>
+
+    <section id="services" class="services">
+        <div class="container">
+
+            <div class="section-header reveal">
+                <p class="section-label">Services</p>
+
+                <h2>
+                    Formats <span class="outline">maîtrisés</span>
+                </h2>
+            </div>
+
+            <div class="services-grid">
+
+                <div
+                    class="service-card reveal"
+                    style="transition-delay: 0.1s"
+                >
+                    <span class="service-number">01</span>
+
+                    <h3>Montage court</h3>
+
+                    <p>
+                        Coupe précise, tempo fort et structure pensée pour retenir l'attention dès les premières secondes.
+                    </p>
+                </div>
+
+                <div
+                    class="service-card reveal"
+                    style="transition-delay: 0.2s"
+                >
+                    <span class="service-number">02</span>
+
+                    <h3>Packaging video</h3>
+
+                    <p>
+                        Habillage, transitions, sous-titres, sound design et finition visuelle cohérente.
+                    </p>
+                </div>
+
+                <div
+                    class="service-card reveal"
+                    style="transition-delay: 0.3s"
+                >
+                    <span class="service-number">03</span>
+
+                    <h3>Direction creative</h3>
+
+                    <p>
+                        Une présentation premium pour donner à la chaîne, au reel ou au projet une vraie présence.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="outils" class="tools">
+        <div class="container">
+
+            <div class="tools-content reveal">
+
+                <p class="section-label">Outils</p>
+
+                <h2>
+                    Mes outils <span class="outline">de travail</span>
+                </h2>
+
+                <div class="tools-list">
+                    <span>Adobe Premiere Pro</span>
+                    <span>Adobe After Effects</span>
+                    <span>Adobe Audition</span>
+                </div>
+
+                <blockquote class="tools-quote">
+                    &ldquo;Never give in. Never give in. Never, never, never, never&mdash;in nothing, great or small&mdash;never give in, except to convictions of honour and good sense.&rdquo;
+                </blockquote>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+
+            <div class="section-header reveal">
+                <p class="section-label">Portfolio</p>
+
+                <h2>
+                    Montages <span class="outline">réalisés</span>
+                </h2>
+            </div>
+
+            <div class="portfolio-grid">
+
+                <div class="portfolio-item reveal-scale">
+                    <div class="portfolio-thumb">
+
+                        <img
+                            src="https://img.youtube.com/vi/-_bcmHst_Yc/hqdefault.jpg"
+                            alt="Video"
+                            loading="lazy"
+                        >
+
+                        <a
+                            href="https://youtu.be/-_bcmHst_Yc"
+                            class="portfolio-overlay"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <span>Voir →</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="portfolio-item reveal-scale">
+                    <div class="portfolio-thumb">
+
+                        <img
+                            src="https://img.youtube.com/vi/fMvX_PeXom4/hqdefault.jpg"
+                            alt="Video"
+                            loading="lazy"
+                        >
+
+                        <a
+                            href="https://youtu.be/fMvX_PeXom4"
+                            class="portfolio-overlay"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <span>Voir →</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="portfolio-item reveal-scale">
+                    <div class="portfolio-thumb">
+
+                        <img
+                            src="https://img.youtube.com/vi/qulAzY_eMTE/hqdefault.jpg"
+                            alt="Video"
+                            loading="lazy"
+                        >
+
+                        <a
+                            href="https://youtu.be/qulAzY_eMTE"
+                            class="portfolio-overlay"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <span>Voir →</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="portfolio-item reveal-scale">
+                    <div class="portfolio-thumb">
+
+                        <img
+                            src="https://img.youtube.com/vi/sFIP1reqB_4/hqdefault.jpg"
+                            alt="Video"
+                            loading="lazy"
+                        >
+
+                        <a
+                            href="https://youtu.be/sFIP1reqB_4"
+                            class="portfolio-overlay"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <span>Voir →</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="portfolio-item reveal-scale">
+                    <div class="portfolio-thumb">
+
+                        <img
+                            src="https://img.youtube.com/vi/AfmDTQgVIVk/hqdefault.jpg"
+                            alt="Video"
+                            loading="lazy"
+                        >
+
+                        <a
+                            href="https://youtu.be/AfmDTQgVIVk"
+                            class="portfolio-overlay"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <span>Voir →</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="portfolio-item reveal-scale">
+                    <div class="portfolio-thumb">
+
+                        <img
+                            src="https://img.youtube.com/vi/cbgoe5sceXk/hqdefault.jpg"
+                            alt="Video"
+                            loading="lazy"
+                        >
+
+                        <a
+                            href="https://youtu.be/cbgoe5sceXk"
+                            class="portfolio-overlay"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <span>Voir →</span>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="portfolio-more reveal">
+                <a
+                    href="https://www.youtube.com/playlist?list=PLr6Ba9RZO-sZ-AjnjAxozsWwqyTn204Md"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-outline"
+                >
+                    Playlist complète →
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="development" class="tools development-section">
+        <div class="container">
+
+            <div class="tools-content reveal">
+
+                <p class="section-label">
+                    En développement
+                </p>
+
+                <h2>
+                    Cette section est
+                    <span class="outline">en développement</span>
+                </h2>
+
+                <p class="hero-desc">
+                    Cette partie du site est actuellement en développement. Elle sera disponible prochainement.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="collab" class="contact">
+        <div class="container">
+
+            <div class="section-header reveal">
+
+                <p class="section-label">
+                    Collaborations
+                </p>
+
+                <h2>
+                    Ils m'ont <span class="outline">fait confiance</span>
+                </h2>
+
+            </div>
+
+            <div class="collab-grid">
+
+                <a
+                    href="https://www.youtube.com/@cubi-game6913"
+                    target="_blank"
+                    rel="noopener"
+                    class="collab-card reveal-left"
+                >
+                    <div class="collab-avatar">
+
+                        <img
+                            src="https://yt3.googleusercontent.com/einN5wa9bMaQ_-cna0F8ZrExNG9nvBKZnCZCObLQHOOsYnmsMiZt9l8G0inbGP9t2uxmLR9JcA=s160-c-k-c0x00ffffff-no-rj"
+                            alt="Cubi Game"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="collab-info">
+                        <h3>Cubi Game</h3>
+                        <span>Influenceur</span>
+                    </div>
+                </a>
+
+                <a
+                    href="https://www.youtube.com/@StickOnThePlace"
+                    target="_blank"
+                    rel="noopener"
+                    class="collab-card reveal-right"
+                >
+                    <div class="collab-avatar">
+
+                        <img
+                            src="https://yt3.googleusercontent.com/R5N_tGfLAab49iqHK6BfvVW_jr8749gIKCWH1dE57E0e2FIbyk6wTtMCtfRrAYEPzsTEFayQ=s160-c-k-c0x00ffffff-no-rj"
+                            alt="Stick On The Place"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="collab-info">
+                        <h3>Stick On The Place</h3>
+                        <span>Influenceur</span>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="contact-content reveal">
+
+                <p class="section-label">
+                    Contact
+                </p>
+
+                <h2>
+                    Parlons <span class="outline">de ton projet</span>
+                </h2>
+
+                <div class="contact-links">
+
+                    <a
+                        href="https://discord.com/users/887946326776643615"
+                        target="_blank"
+                        rel="noopener"
+                        class="btn btn-primary"
+                    >
+                        Discord — mezzdev
+                    </a>
+
+                    <div class="contact-social">
+
+                        <a
+                            href="https://guns.lol/mezzdev"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Guns.lol
+                        </a>
+
+                        <a
+                            href="https://www.youtube.com/@mezzmonteur"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            YouTube
+                        </a>
+
+                        <a
+                            href="https://www.youtube.com/playlist?list=PLr6Ba9RZO-sZ-AjnjAxozsWwqyTn204Md"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Playlist
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <p class="footer-copy">
+                © <span id="currentYear">2026</span> — mezz
+            </p>
+
+            <div class="footer-links">
+                <a href="https://mezzmonteur.com/confidentialite">
+                    Confidentialité
+                </a>
+            </div>
+
+            <a href="#top" class="footer-top">
+                Revenir en haut ↑
+            </a>
+
+        </div>
+    </footer>
+
+    <aside
+        id="consent-banner"
+        class="consent-banner"
+        aria-label="Préférences de confidentialité"
+        hidden
+    >
+        <p>
+            Ce site utilise une mesure d’audience anonyme après votre accord.
+        </p>
+
+        <div class="consent-actions">
+
+            <button
+                id="consent-decline"
+                type="button"
+                class="consent-button consent-button-secondary"
+            >
+                Refuser
+            </button>
+
+            <button
+                id="consent-accept"
+                type="button"
+                class="consent-button"
+            >
+                Accepter
+            </button>
+
+        </div>
+    </aside>
+
+    <script type="module" src="js/tracker.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
 </html>
