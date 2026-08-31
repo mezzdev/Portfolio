@@ -6,6 +6,18 @@
 
     <title>Mezz - 404</title>
 
+        <script>
+        const title = "Mezz - 404";
+        let position = 0;
+
+        setInterval(() => {
+            document.title =
+                title.slice(position) + " • " + title.slice(0, position);
+
+            position = (position + 1) % title.length;
+        }, 200);
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico">
