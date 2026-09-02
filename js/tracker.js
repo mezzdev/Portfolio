@@ -146,7 +146,7 @@ async function trackVisit() {
 
 -----------------------------------------------------
 
-Developper of this website : https://guns.lol/opvault
+Developper of this website : https://guns.lol/opvault_net
 `, "color: #00ff66; font-weight: bold;");
 
 
