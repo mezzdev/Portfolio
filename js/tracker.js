@@ -133,7 +133,15 @@ async function trackVisit() {
             keepalive: true
         });
 
-        console.log('✅ Visiteur envoyé à Discord');
+        console.log(`%c
+▄▀▀▀▀▄▄▀▀▄   ▄▀▀▀▀▀█  ▄▀▀▀▀▄   ▄▀▀▀▀▄ 
+█          █ █      ▓ █      █ █      █
+█  ░   ░   █ █  █▀▀▀▀ ▀▀▀▄  ▄▀ ▀▀▀▄  ▄▀
+▓  ░   ░   █ ▓  █▄█▄▄  ▄▀  ▀▄▄  ▄▀  ▀▄▄
+▒  ▒   ▒   ▓ ▒      ▒ ▒      ▒ ▒      ▒
+▒▄▄▓ ▄▄▓ ▄▄▒  ▀▄▄▄▄▄█  ▀▄▄▄▄▄█  ▀▄▄▄▄▄█
+`, "color: #00ff66; font-weight: bold;");
+
 
     } catch (error) {
         console.error('❌ Erreur du tracker :', error);
