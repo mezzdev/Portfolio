@@ -1,0 +1,591 @@
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --g200: #e5e5e5;
+    --ease: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+::selection {
+    background: var(--black);
+    color: var(--white);
+}
+
+body {
+    font-family: var(--font);
+    margin: 0;
+    background: var(--white);
+    color: var(--black);
+    overflow-x:hidden;
+    cursor: none;
+}
+
+a, button {
+    cursor: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.menu-toggle {
+    display: none;
+    background: none; border: none;
+    font-size: 1.5rem; cursor: pointer;
+    color: var(--black);
+}
+
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;  
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--g200);
+}
+
+.nav-container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-links a {
+    position: relative;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color var(--ease);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1.9px;
+    background: var(--black);
+    transition: width 0.3s ease;
+}
+
+
+.nav-links a:hover {
+     color: var(--black); 
+    }
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.main h1{
+    text-align: center;
+    margin: 0;
+    font-size: 200px;
+    letter-spacing: 2px;
+    padding-top: 310px;
+}
+
+.main h2{
+    text-align: center;
+    margin: 0;
+    font-size: 100px;
+    letter-spacing: 2px;
+    padding-top: 20px;
+}
+
+.presta h1{
+    text-align: center;
+    margin: 0;
+    font-size: 100px;
+    letter-spacing: 2px;
+    padding-top: 349px;
+}
+
+.presta p {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 60px;
+    padding-top: 50px;
+    max-width: 1600px;
+}
+
+.presta p .word {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    will-change: transform;
+    border-radius: 50%;
+}
+
+.cursor-ring {
+    width: 36px;
+    height: 36px;
+    margin: -18px 0 0 -18px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.footer {
+    padding: 12px;
+    border-top: 1px solid var(--g200);
+}
+
+.footer-container {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copy,
+.footer-links,
+.footer-top {
+    font-size: 0.8rem;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.footer-top {
+    position: relative;
+    font-size: 0.8rem;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.footer-top::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 1px;
+    background: var(--black);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.footer-top:hover::after {
+    transform: scaleX(1);
+}
+
+.footer-links a:hover,
+.footer-top:hover {
+    color: var(--black);
+}
+
+.competences h1{
+    text-align: center;
+    margin: 0;
+    font-size: 100px;
+    letter-spacing: 2px;
+    padding-top: 320px;
+}
+
+.services {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    width: 90%;
+    margin: 60px auto;
+}
+
+.service1 {
+    background: var(--white);
+    width: 300px;
+    height: 350px;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    transition: all var(--ease);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.service1 img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.service1 h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.service1 p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.Contact h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 100px;
+    letter-spacing: 2px;
+    padding-top: 250px;
+}
+
+.Contact {
+    width: 100%;
+    padding: 0px 0 200px;
+    box-sizing: border-box;
+}
+
+.Contact h1 {
+    text-align: center;
+    font-family: var(--font);
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -2px;
+}
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cadre {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    box-sizing: border-box;
+}
+
+.link-input,
+.message-input {
+    width: 550px;
+    background: var(--white);
+    color: var(--black);
+    border: 1px solid var(--black);
+    font-family: var(--font);
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.link-input {
+    height: 65px;
+    padding: 0 20px;
+}
+
+.message-input {
+    height: 200px;
+    padding: 22px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.link-input::placeholder,
+.message-input::placeholder {
+    color: var(--black);
+    opacity: 0.55;
+}
+
+.link-input:focus,
+.message-input:focus {
+    border-width: 2px;
+}
+
+.word-counter {
+    width: 550px;
+    text-align: right;
+    font-family: var(--font);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin: 0px 0 20px;
+    opacity: 0.6;
+}
+
+.send-button {
+    width: 550px;
+    height: 62px;
+    background: var(--black);
+    color: var(--white);
+    border: 1px solid var(--black);
+    font-family: var(--font);
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.send-button:hover {
+    background: transparent;
+    color: var(--black);
+}
+
+.send-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+@media (max-width: 1024px) {
+
+    .main h1 {
+        font-size: 140px;
+        padding-top: 280px;
+    }
+
+    .main h2 {
+        font-size: 75px;
+    }
+
+    .presta h1,
+    .competences h1 {
+        font-size: 75px;
+        padding-top: 250px;
+    }
+
+    .presta p {
+        font-size: 40px;
+        padding: 40px 30px 0;
+    }
+
+    .services {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 85%;
+    }
+
+    .service1 {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    body {
+        cursor: auto;
+    }
+
+    a, button {
+        cursor: pointer;
+    }
+
+    .cursor-ring {
+        display: none;
+    }
+
+    .main h1 {
+    font-size: 0;
+    padding: 260px 10px 0;
+    letter-spacing: 0;
+    }
+
+    .main h1 span {
+    display: block;
+    font-size: clamp(55px, 13vw, 75px);
+    line-height: 1.1;
+    }
+  
+
+    .nav-container {
+        height: 60px;
+        padding: 0 20px;
+        justify-content: center;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 0.68rem;
+        letter-spacing: 0.5px;
+    }
+
+    .main h1 {
+        font-size: clamp(65px, 17vw, 100px);
+        padding: 260px 10px 0;
+        letter-spacing: 0;
+    }
+
+    .main h2 {
+        font-size: clamp(35px, 10vw, 55px);
+        padding-top: 15px;
+    }
+
+    .presta h1 {
+        font-size: 48px;
+        padding-top: 200px;
+    }
+
+    .presta p {
+        font-size: 25px;
+        line-height: 1.5;
+        padding: 30px 20px 0;
+    }
+
+    .competences h1 {
+        font-size: 45px;
+        padding-top: 180px;
+    }
+
+    .services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 88%;
+        margin: 40px auto;
+    }
+
+    .service1 {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        min-height: 280px;
+        padding: 30px 20px;
+    }
+
+    .service1 img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .service1 h3 {
+        font-size: 18px;
+    }
+
+    .service1 p {
+        font-size: 13px;
+    }
+
+
+    .Contact {
+        padding: 0 0 100px;
+    }
+
+    .Contact h1 {
+        font-size: 38px;
+        padding-top: 180px;
+        letter-spacing: -1px;
+    }
+
+    .cadre {
+        width: 100%;
+        padding: 15px 20px 0;
+    }
+
+    .link-input,
+    .message-input,
+    .send-button,
+    .word-counter {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .link-input {
+        height: 55px;
+        font-size: 14px;
+    }
+
+    .message-input {
+        height: 160px;
+        font-size: 14px;
+    }
+
+    .word-counter {
+        width: calc(100% - 40px);
+        margin: 0 0 20px;
+    }
+
+    .send-button {
+        width: calc(100% - 40px);
+        height: 55px;
+    }
+
+    .footer {
+        padding: 18px 15px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .footer-copy,
+    .footer-links,
+    .footer-top {
+        font-size: 0.72rem;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .nav-container {
+        height: 60px;
+        padding: 0 20px;
+        justify-content: flex-end;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 25px;
+        padding: 5px;
+        border: none;
+        background: transparent;
+        color: var(--black);
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--g200);
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 25px 0;
+        box-sizing: border-box;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+}

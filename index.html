@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mezz - Developpeur web</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/Mezz.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+        <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#Acceuil">Accueil</a>
+                <a href="#Présentation">Présentation</a>
+                <a href="#Compétences">Compétences</a>
+                <a href="#Contact">Contact</a>
+            </div>
+             <button class="menu-toggle" aria-label="Menu">
+                ☰
+            </button> 
+        </div>
+    </nav>
+      <main>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+        <div class="main" id="Acceuil">
+            <h1>Mezz</h1>
+           <h2>
+    <span>FrontEnd</span>
+    <span>Developpeur</span>
+</h2>
+        </div>
+       <div class="presta" id="Présentation">
+        <h1>Présentation</h1>
+        <p>Hello, moi c'est mezz et je suis développeur web frontend, j'ai pas encore eu de clients donc je n'ait pas encore de vrai "portfolio" mais j'espère que ce site te donnerais envie de me prendre !</p>
+       </div>
+       <div class="competences" id="Compétences">
+    <h1>Compétences</h1>
+
+    <div class="services">
+        <div class="service1">
+            <img src="assets/Cloudfare.svg">
+            <h3>HÉBERGEMENT ET PUBLICATION</h3>
+            <p>J'héberge et publie directement mes sites sur Cloudflare pour garantir une stabilité et une sécurité.</p>
+        </div>
+
+        <div class="service1">
+            <img src="assets/Html.svg">
+            <h3>HTML</h3>
+            <p>Je fais des interfaces élégantes, intuitives et pensées pour l'expérience utilisateur.</p>
+        </div>
+
+        <div class="service1">
+            <img src="assets/Css.svg">
+            <h3>CSS</h3>
+            <p>Je transforme des maquettes en pages web structurées, propres et responsives.</p>
+        </div>
+
+        <div class="service1">
+            <img src="assets/Javascript.svg">
+            <h3>JAVASCRIPT</h3>
+            <p>J'ajoute des interactions dynamiques et des fonctionnalités pour enrichir le tout.</p>
+        </div>
+
+        <div class="service1">
+            <img src="assets/Gsap.svg">
+            <h3>GSAP</h3>
+            <p>C'est un framework JavaScript qui me permet de réaliser des animations fluides.</p>
+        </div>
+    </div>
+</div>
+  <div class="Contact" id="Contact">
+    <h1>CONTACTEZ MOI !</h1>
+
+    <form class="contact-form" id="contact-form">
+
+        <div class="cadre">
+            <input
+                type="text"
+                id="video-url"
+                placeholder="EMAIL ou DISCORD"
+                class="link-input"
+                required
+            >
+        </div>
+
+        <div class="cadre">
+            <textarea
+                id="message"
+                class="message-input"
+                placeholder="Écrivez votre demande ici..."
+                maxlength="5000"
+                required
+            ></textarea>
+        </div>
+
+        <p class="word-counter">
+            <span id="word-count">0</span> / 500
+        </p>
+
+        <button type="submit" class="send-button">
+            ENVOYER
+        </button>
+
+    </form>
+</div>
+          <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-copy">
+                © <span id="currentYear">2026</span> — Mezz
+            </p>
+
+            <a href="#Acceuil" class="footer-top">
+                ↑ Revenir en haut ↑
+            </a>
+        </div>
+    </footer>
+      </main>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="js/gsap.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/candidature.js"></script>
+</body>
+</html>
