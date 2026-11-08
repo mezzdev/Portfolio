@@ -3,6 +3,10 @@ const messageInput = document.getElementById("message");
 const contactInput = document.getElementById("video-url");
 const wordCount = document.getElementById("word-count");
 
+messageInput.addEventListener("input", () => {
+    wordCount.textContent = messageInput.value.length;
+});
+
 contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
