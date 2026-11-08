@@ -30,8 +30,7 @@ export async function onRequestPost({ request, env }) {
             body: JSON.stringify({
                 embeds: [{
                     author: {
-                        name: "NOUVEAU MESSAGE",
-                        icon_url: "https://qmezz.pages.dev/assets/Mezz.ico"
+                        name: "NOUVEAU MESSAGE : ",
                     },
                     title: "",
                     description: "",
