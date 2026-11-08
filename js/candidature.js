@@ -32,7 +32,7 @@ contactForm.addEventListener("submit", async (e) => {
             throw new Error(result.error || "Erreur lors de l'envoi.");
         }
 
-        alert("Message envoyé avec succès !");
+        alert("Message envoyé !");
 
         contactForm.reset();
         wordCount.textContent = "0";
