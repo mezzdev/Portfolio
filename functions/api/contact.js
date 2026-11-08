@@ -31,10 +31,10 @@ export async function onRequestPost({ request, env }) {
                 embeds: [{
                     author: {
                         name: "NOUVEAU MESSAGE",
-                        icon_url: "https://qmezz.pages.dev/assets/Mezz.svg"
+                        icon_url: "https://qmezz.pages.dev/assets/Mezz.ico"
                     },
-                    title: "NOUVELLE CANDIDATURE",
-                    description: "━━━━━━━━━━━━━━━━━━━━━━",
+                    title: "",
+                    description: "",
                     color: 0x000000,
                     fields: [
                         {
@@ -44,7 +44,7 @@ export async function onRequestPost({ request, env }) {
                         },
                         {
                             name: "MESSAGE",
-                            value: `>>> ${message.trim()}`,
+                            value: `**${message.trim()}**`,
                             inline: false
                         }
                     ],
