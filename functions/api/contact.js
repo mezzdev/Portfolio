@@ -24,15 +24,15 @@ export async function onRequestPost({ request, env }) {
             },
             body: JSON.stringify({
                 embeds: [{
-                    title: "Nouveau message - Mezz",
+                    title: "# NOUVEAU MESSAGE",
                     color: 0x000000,
                     fields: [
                         {
-                            name: "Contact",
+                            name: "# CONTACT : ",
                             value: contact.trim()
                         },
                         {
-                            name: "Message",
+                            name: "# MESSAGE : ",
                             value: message.trim()
                         }
                     ]
